@@ -21,7 +21,8 @@ has_many :buyers
 
 | Column           | Type        | Options                       |
 |------------------|-------------|-------------------------------|
-| name             | string      | null: false, foreign_key: true|
+| name             | string      | null: false,                  |
+| user             | references  | null: false, foreign_key: true|
 | price            | integer     | null: false                   |
 | content          | text        | null: false                   |
 | category_id      | integer     | null: false                   |
@@ -45,7 +46,7 @@ has_one :buyer
 ### Association
 belongs_to :user
 belongs_to :item
-has_one : adress
+has_one : address
 
 
 ## addresses テーブル
@@ -53,7 +54,7 @@ has_one : adress
 | Column            | Typ         | Options     |
 |-------------------|-------------|-------------|
 | postcode          | string      | null: false |
-| prefecture        | integer     | null: false |
+| prefecture_id     | integer     | null: false |
 | city              | string      | null: false |
 | street_number     | string      | null: false |
 | building_name     | string      |             |
