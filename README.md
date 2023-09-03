@@ -10,7 +10,7 @@
 | email                    | string   | null: false, unique: true |
 | encrypted_password       | string   | null: false               |
 | nickname                 | string   | null: false               |
-| date                     | date     | null: false               |
+| birth_day                | date     | null: false               |
 
 ### Association
 has_many :items
@@ -19,16 +19,16 @@ has_many :buyers
 
 ## items テーブル
 
-| Column       | Type        | Options                       |
-|--------------|-------------|-------------------------------|
-| name         | string      | null: false, foreign_key: true|
-| price        | integer     | null: false                   |
-| content      | text        | null: false                   |
-| category_id  | integer     | null: false                   |
-| condition_id | integer     | null: false                   |
-| shipment_id  | integer     | null: false                   |
-| address_id    | integer     | null: false                   |
-| cost_id      | integer     | null: false                   |
+| Column           | Type        | Options                       |
+|------------------|-------------|-------------------------------|
+| name             | string      | null: false, foreign_key: true|
+| price            | integer     | null: false                   |
+| content          | text        | null: false                   |
+| category_id      | integer     | null: false                   |
+| condition_id     | integer     | null: false                   |
+| shipment_id      | integer     | null: false                   |
+| prefecture_id    | integer     | null: false                   |
+| cost_id          | integer     | null: false                   |
 
 ### Association
 belongs_to :user
@@ -40,7 +40,7 @@ has_one :buyer
 | Column      | Type        | Options                        |
 |-------------|-------------|--------------------------------|
 | item        | references  | null: false, foreign_key: true |
-| user        | string      | null: false                    |
+| user        | references  | null: false, foreign_key: true |
 
 ### Association
 belongs_to :user
@@ -53,12 +53,12 @@ has_one : adress
 | Column            | Typ         | Options     |
 |-------------------|-------------|-------------|
 | postcode          | string      | null: false |
-| prefecture        | string      | null: false |
+| prefecture        | integer     | null: false |
 | city              | string      | null: false |
 | street_number     | string      | null: false |
-| building_name     | string      | null: false |
+| building_name     | string      |             |
 | tel               | string      | null: false |
-| purchase_history  | references  | null: false, foreign_key: true |
+| buyer             | references  | null: false, foreign_key: true |
 
 ### Association
 belongs_to :buyer
