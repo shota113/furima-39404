@@ -1,0 +1,13 @@
+current directory: /Users/omoteharashouta/projects/furima-39404/vendor/bundle/ruby/2.6.0/gems/json-2.6.3/ext/json
+/Users/omoteharashouta/.rbenv/versions/2.6.5/bin/ruby -I /Users/omoteharashouta/.rbenv/versions/2.6.5/lib/ruby/2.6.0 -r ./siteconf20230921-49135-161lq0s.rb extconf.rb
+creating Makefile
+
+current directory: /Users/omoteharashouta/projects/furima-39404/vendor/bundle/ruby/2.6.0/gems/json-2.6.3/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/omoteharashouta/projects/furima-39404/vendor/bundle/ruby/2.6.0/gems/json-2.6.3/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/omoteharashouta/projects/furima-39404/vendor/bundle/ruby/2.6.0/gems/json-2.6.3/ext/json
+make "DESTDIR=" install
