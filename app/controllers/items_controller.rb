@@ -19,14 +19,14 @@ class ItemsController < ApplicationController
     if @item.update(item_params)
       redirect_to item_path(@item)
     else
-      render 'edit'
+      #render 'edit'
     end
   end
 
   private
 
   def item_params
-    params.require(:item).permit(:name, :price, :category_id, :condition_id, :shipment_id, :prefecture_id, :cost_id, :content, :user, :image).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :price, :category_id, :condition_id, :shipment_id, :prefecture_id, :cost_id, :content, :image).merge(user_id: current_user.id)
   end
 end
 
