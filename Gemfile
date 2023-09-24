@@ -67,3 +67,5 @@ group :production do
 end
 
 gem 'devise'
+gem 'active_hash'
+gem 'mail', '2.7.1'
