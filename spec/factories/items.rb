@@ -8,7 +8,7 @@ FactoryBot.define do
     category_id     {Faker::Number.between(from: 2, to: 11)}
     condition_id    {Faker::Number.between(from: 2, to: 7)}
     shipment_id     {Faker::Number.between(from: 2, to: 4)}
-    prefecture_id   {Faker::Number.between(from: 2, to: 47)}
+    prefecture_id   {Faker::Number.between(from: 2, to: 48)}
     cost_id         {Faker::Number.between(from: 2, to: 3)}
 
     after(:build) do |item|

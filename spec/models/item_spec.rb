@@ -11,6 +11,11 @@ RSpec.describe Item, type: :model do
       end
     end
     context '出品登録ができないとき' do
+      it 'ユーザー登録している人でないと出品できない' do
+        @item.user = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("User must exist")
+      end
       it 'nameが空欄だと出品できない' do
         @item.name = ''
         @item.valid?
@@ -85,6 +90,11 @@ RSpec.describe Item, type: :model do
         @item.price = 10000000
         @item.valid?
         expect(@item.errors.full_messages).to include('Price must be less than or equal to 9999999')
+      end
+      it 'priceに半角以外の文字が入力されていると出品できない' do
+        @item.price = "１Aa!"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price is not a number")
       end
     end
   end
