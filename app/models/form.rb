@@ -12,6 +12,6 @@ class Form
   validates :block
   validates :phonenumber
   def save
-    # 各テーブルにデータを保存する処理を書く
+    order = Order.create(user)
   end
 end
