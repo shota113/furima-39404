@@ -36,7 +36,7 @@ belongs_to :user
 has_one :buyer
 
 
-## buyers テーブル
+## orders テーブル
 
 | Column      | Type        | Options                        |
 |-------------|-------------|--------------------------------|
@@ -59,7 +59,7 @@ has_one : address
 | street_number     | string      | null: false |
 | building_name     | string      |             |
 | tel               | string      | null: false |
-| buyer             | references  | null: false, foreign_key: true |
+| order             | references  | null: false, foreign_key: true |
 
 ### Association
-belongs_to :buyer
+belongs_to :order
