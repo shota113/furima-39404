@@ -12,6 +12,6 @@ class Form
   validates :block
   validates :phonenumber
   def save
-    order = Order.create(user)
+    order = Order.create()
   end
 end
