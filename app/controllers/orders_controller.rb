@@ -7,5 +7,13 @@ class OrdersController < ApplicationController
     end
   end
   def create
+    
   end
+end
+
+
+private
+
+def order_params
+  params.require(:form).permit(:postcode, :prefecture_id, :city, :street_number, :building_name, :tel).merge(user_id: current_user.id)
 end
