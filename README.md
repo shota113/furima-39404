@@ -14,7 +14,7 @@
 
 ### Association
 has_many :items
-has_many :buyers
+has_many :orders
 
 
 ## items テーブル
@@ -33,7 +33,7 @@ has_many :buyers
 
 ### Association
 belongs_to :user
-has_one :buyer
+has_one :order
 
 
 ## orders テーブル
