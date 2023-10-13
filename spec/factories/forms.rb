@@ -9,5 +9,6 @@ FactoryBot.define do
     street_number    {"坂道4-2"}
     building_name    {Faker::Internet.name}
     tel              {"12345678912"}
+    token            {"tok_abcdefghijk00000000000000000"}
   end
 end

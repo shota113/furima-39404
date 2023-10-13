@@ -7,7 +7,7 @@ RSpec.describe Form, type: :model do
 
   describe '配送先情報の保存' do
     context '配送先情報の保存' do
-      it '全ての値が正しく入力されている場合は保存できる' do
+      it '全ての値が正しく入力されtokenが存在する場合は保存できる' do
         @form.user_id = 1
         @form.item = 1
         expect(@form).to be_valid
@@ -66,6 +66,11 @@ RSpec.describe Form, type: :model do
         @form.tel = ''
         @form.valid?
         expect(@form.errors.full_messages).to include("Tel can't be blank")
+      end
+      it "tokenが空では登録できないこと" do
+        @form.token = nil
+        @form.valid?
+        expect(@form.errors.full_messages).to include("Token can't be blank")
       end
     end
   end
