@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      render :new
+      render 'new'
     end
   end
   def update
@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
     end
   end
   def edit
-    if @item.user_id == current_user.id 
+    if @item.user_id == current_user.id && @item.order.nil?
     else
       redirect_to root_path
     end
