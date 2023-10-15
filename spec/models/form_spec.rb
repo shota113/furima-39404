@@ -1,11 +1,10 @@
 require 'rails_helper'
 RSpec.describe Form, type: :model do
   before do
-    @form = FactoryBot.build(:form)
-    @form.user_id = 1
-    @form.item_id = 1
+    @user = FactoryBot.create(:user) 
+    @item = FactoryBot.create(:item, user: @user)
+    @form = FactoryBot.build(:form, user_id: @user, item_id: @item)
   end
-
 
   describe '配送先情報の保存' do
     context '配送先情報の保存' do
@@ -43,6 +42,11 @@ RSpec.describe Form, type: :model do
       end
       it '電話番号が12桁以上では購入できない' do
         @form.tel = '123456789987'
+        @form.valid?
+        expect(@form.errors.full_messages).to include("Tel is invalid")
+      end
+      it '電話番号に半角数字以外が含まれている場合購入できない' do
+        @form.tel = 'あKk23.;'
         @form.valid?
         expect(@form.errors.full_messages).to include("Tel is invalid")
       end
